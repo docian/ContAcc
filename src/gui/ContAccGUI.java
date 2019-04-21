@@ -47,6 +47,19 @@ public class ContAccGUI extends JFrame {
 	private JTextField txtAccessPoint;
 	private JTextField txtCardId;
 	private JLabel lblTime;
+	private JButton btnSalveaza;
+
+	public JTextField getTxtAccessPoint() {
+		return txtAccessPoint;
+	}
+
+	public JTextField getTxtCardId() {
+		return txtCardId;
+	}
+
+	public JLabel getLblTime() {
+		return lblTime;
+	}
 
 	public void setLblTime(String time) {
 		this.lblTime.setText(time);
@@ -162,8 +175,10 @@ public class ContAccGUI extends JFrame {
 		panel_3.add(btnCauta);
 		btnCauta.setHorizontalAlignment(SwingConstants.RIGHT);
 		
-		JButton btnSalveaza = new JButton("Salveaza Eveniment");
+		btnSalveaza = new JButton("Salveaza Eveniment");
 		panel_3.add(btnSalveaza);
+		btnSalveaza.addActionListener(new EvenimenteListen(this));
+		
 	}
 	
 	private class Cautare implements ActionListener{
